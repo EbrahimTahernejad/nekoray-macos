@@ -59,12 +59,13 @@ check_and_install() {
 }
 
 # Array to store dependencies
-dependencies=("cmake" "ninja" "go" "curl")
+dependencies=("cmake" "ninja" "curl")
 
 # Check and install dependencies using the function
 for dep in "${dependencies[@]}"; do
   check_and_install "$dep" "$dep"
 done
+check_and_install "go" "go@1.20"
 
 # Set environment variables for Qt5
 export PATH="/usr/local/opt/qt@5/bin:$PATH"
